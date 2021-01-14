@@ -128,7 +128,7 @@ fig2 <-fig2 +
   theme(plot.title = element_text(size = 11, hjust = 0.5)) 
 
 # ***************************************************
-# outcome: KEEPS A DISTANCE ----
+# outcome: KEEPS DISTANCE ----
 M0d <-glmer(dist~ ( 1 | country), data=clean.d, family = "binomial")
 summ(M0d)
 # add personality trait and covariates
@@ -218,26 +218,28 @@ fig2a <- ggplot(allzd, aes(x=x, y=predicted, color=p)) +
   geom_line(data=allzf,aes(x=allzf$x), size=1.2) +  # limits social contacts
   scale_y_continuous(labels=c("0%", "20%", "40%","60%", "80%", "100%"), limits=c(0,1),
                      breaks=c(0,0.2,0.4,0.6,0.8,1)) +
-  theme(legend.title = element_blank(), legend.position = "none") +
+  theme(legend.title = element_blank(), legend.position = "none",
+         panel.grid.minor = element_blank()) +
   scale_colour_viridis_d() +
   ylab("Predicted probability") + xlab("") +
   annotate("rect", xmin = -2, xmax = 2, ymin = 0.75, ymax = 1,
            alpha = .1)
 
-# zoom from 75 to 100%
+# zoom from 80 to 100%
 fig2b <- ggplot(allzd, aes(x=x, y=predicted, color=p)) +
   theme_bw() +
   xlim(-2,2) +
   geom_line(data=allzd, aes(x=allzd$x), size=1.2) +
   geom_line(data=allz,aes(x=allz$x), size=1.2) +
   geom_line(data=allzf,aes(x=allzf$x), size=1.2) +
-  scale_y_continuous(labels=c("75%", "80%", "85%","90%", "95%", "100%"), limits=c(0.75,1),
-                     breaks=c(0.75,0.8,0.85,0.9,0.95,1)) +
-  theme(legend.title = element_blank()) +
+  scale_y_continuous(labels=c("80%", "100%"), limits=c(0.8,1),
+                     breaks=c(0.8,1)) +
+  theme(legend.title = element_blank(), 
+        panel.grid.minor = element_blank()) +
   scale_colour_viridis_d() +
   ylab(" ") + xlab("") +
   annotate("text", x=0, y=0.95, label= "Wears a mask") +
-  annotate("text", x=0, y=0.83, label= "Limits social contacts") +
+  annotate("text", x=0, y=0.85, label= "Limits social contacts") +
   annotate("text", x=0, y=1, label= "Keeps distance") 
 
 # *******************************************
