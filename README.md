@@ -1,4 +1,4 @@
-## R-script fot the preprint Big Five personality traits and COVID-19 precautionary behaviors among older adults in Europe, https://psyarxiv.com/rvbjf/
+#### R-script fot the preprint Big Five personality traits and COVID-19 precautionary behaviors among older adults in Europe, https://psyarxiv.com/rvbjf/
 
 To account for the clustering of the respondents in countries, associations between personality and COVID-19 precautionary behaviors were examined with multilevel, randomintercept logistic regression models to avoid artificially low standard errors of estimates and
 potentially inflated Type 1 error rate. The random intercept for country accounted for the potential non-independence of observations from the same country. The five personality traits
